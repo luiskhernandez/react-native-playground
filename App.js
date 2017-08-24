@@ -39,17 +39,17 @@ export default class App extends React.Component {
       <View style={{flex: 1}}>
         <View style={{flex: 1, backgroundColor: 'powderblue'}} />
         <View style={{flex: 2, backgroundColor: 'skyblue'}} />
-        <View style={{flex: 3, backgroundColor: 'steelblue', flexDirection: 'row', justifyContent: 'space-between',}}>
+        <View style={{flex: 3, backgroundColor: 'steelblue', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
           <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
         </View>
-        <View style={{flex: 3, backgroundColor: 'black', flexDirection: 'row', justifyContent: 'space-between',}}>
+        <View style={{flex: 3, backgroundColor: 'black', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
           <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
         </View>
-        <View style={{flex: 3, backgroundColor: 'blue', flexDirection: 'row', justifyContent: 'space-between',}}>
+        <View style={{flex: 3, backgroundColor: 'blue', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
           <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
