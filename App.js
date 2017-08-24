@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 
 class Blink extends Component {
   constructor(props) {
@@ -31,14 +31,30 @@ class Greeting extends Component {
 }
 
 export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
     return (
       <View style={{flex: 1}}>
-        <View style={{flex: 1, backgroundColor: 'powderblue'}} />
-        <View style={{flex: 2, backgroundColor: 'skyblue'}} />
+        <View style={{flex: 3, backgroundColor: 'powderblue', flexDirection: 'column', paddingTop: 40}} >
+          <TextInput
+            value={this.state.text}
+            style={{height: 40}}
+            placeholder="Type here to translate!"
+            onChangeText={(text) => this.setState({text})}
+          />
+          <Text style={{padding: 10, fontSize: 42}}>
+            {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+          </Text>
+        </View>
+        <View style={{flex: 1, backgroundColor: 'skyblue'}} />
         <View style={{flex: 3, backgroundColor: 'steelblue', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
           <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
