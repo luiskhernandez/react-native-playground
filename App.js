@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { Alert, Button, StyleSheet, Text, View, Image, TextInput } from 'react-native';
 
 class Blink extends Component {
   constructor(props) {
@@ -54,8 +54,13 @@ export default class App extends React.Component {
             {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
           </Text>
         </View>
-        <View style={{flex: 1, backgroundColor: 'skyblue'}} />
-        <View style={{flex: 3, backgroundColor: 'steelblue', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+        <View style={{flex: 1, backgroundColor: 'skyblue'}}>
+          <Button
+            onPress={() => { Alert.alert('You tapped the button!')}}
+            title="Press Me"
+          />
+        </View>
+          <View style={{flex: 3, backgroundColor: 'steelblue', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
           <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
