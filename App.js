@@ -5,6 +5,7 @@ import FlatListBasics from './components/flatList'
 import SectionListBasics from './components/sectionList'
 import Movies from './components/networking'
 import PinchZoom from './components/pinchZoom'
+import ScrollViewDemo from './components/scrollview'
 
 class Blink extends Component {
   constructor(props) {
