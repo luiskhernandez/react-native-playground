@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, FlatList, ListView, Text, View } from 'react-native';
+import { ActivityIndicator, FlatList, ListView, Text, View, StyleSheet } from 'react-native';
 
 export default class Movies extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ export default class Movies extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={{flex: 1, paddingTop: 20}}>
+        <View style={styles.container}>
           <ActivityIndicator />
         </View>
       );
@@ -41,7 +41,7 @@ export default class Movies extends Component {
           data={this.state.dataSource}
           renderItem={(rowData) => {
             console.log(rowData)
-            return <Text>{rowData.item.title}, {rowData.item.releaseYear}</Text>
+            return <Text style={styles.item}>{rowData.item.title}, {rowData.item.releaseYear}</Text>
           }
           }
         />
@@ -49,3 +49,15 @@ export default class Movies extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+   flex: 1,
+   paddingTop: 22
+  },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+  },
+})
