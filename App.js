@@ -3,6 +3,7 @@ import { Alert, Button, StyleSheet, Text, View, Image, TextInput } from 'react-n
 import Touchables from './components/touchables'
 import FlatListBasics from './components/flatList'
 import SectionListBasics from './components/sectionList'
+import Movies from './components/networking'
 
 class Blink extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ export default class App extends React.Component {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
 
-    return <SectionListBasics />
+    return <Movies />
   }
 }
 
