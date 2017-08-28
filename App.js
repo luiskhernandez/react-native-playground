@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Alert, Button, StyleSheet, Text, View, Image, TextInput } from 'react-native';
-import Touchables from './components/touchables.js'
+import Touchables from './components/touchables'
+import FlatListBasics from './components/flatList'
+import SectionListBasics from './components/sectionList'
 
 class Blink extends Component {
   constructor(props) {
@@ -43,7 +45,7 @@ export default class App extends React.Component {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
 
-    return <Touchables />
+    return <SectionListBasics />
   }
 }
 
