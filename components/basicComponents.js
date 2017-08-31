@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Alert, Text, View, StyleSheet, Picker } from 'react-native';
+import { Alert, Text, View, StyleSheet, Slider, Picker } from 'react-native';
 
 export default class BasicComponents extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      sliderValue: 10,
       language: 'js',
       css: {
         fontSize: 30
@@ -51,6 +52,12 @@ export default class BasicComponents extends Component {
           <Picker.Item label="Medium" value={30}/>
           <Picker.Item label="Big" value={60} />
         </Picker>
+        <Slider
+          minimumValue={1}
+          maximumValue={100}
+          onValueChange={(value) => this.setState({sliderValue: value, bodyText: ` slider value ${value}`})}
+          step={2}
+        />
         <Text style={styles.baseText}>
           <Text style={styles.titleText} onLongPress={this.onPressTitle}>
           {this.state.titleText}{'\n'}{'\n'}
