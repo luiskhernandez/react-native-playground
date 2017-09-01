@@ -8,6 +8,17 @@ import {
 } from 'react-native';
 
 export default class PanResponderDemo extends Component {
+  render () {
+    return (
+      <View style={styles.container}>
+        <PanItem initialx={0} initialY={0} />
+        <PanItem initialx={0} initialY={0} />
+      </View>
+    );
+  }
+}
+
+class PanItem extends Component {
 
   constructor(props) {
     super(props);
@@ -47,11 +58,11 @@ export default class PanResponderDemo extends Component {
     let [translateX, translateY] = [pan.x, pan.y];
 
     // Calculate the transform property and set it as a value for our style which we add below to the Animated.View component
-    let imageStyle = {transform: [{translateX}, {translateY}]};
+    let imageStyle = {transform: [{translateX}, {translateY}], backgroundColor: 'red'};
     return (
       <View style={styles.container}>
-        <Animated.View style={imageStyle} {...this._panResponder.panHandlers}>
-          <Image source={pic} style={{width: 100, height: 100}}/>
+        <Animated.View style={[styles.box, imageStyle]} {...this._panResponder.panHandlers}>
+            <Image source={pic} style={{width: 150, height: 150}}/>
         </Animated.View>
       </View>
     );
@@ -63,6 +74,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+  },
+  box: {
+    width: 150,
+    height: 150,
+    backgroundColor: "#333",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    color: "#FFF",
+    fontSize: 20,
   }
-})
+});
