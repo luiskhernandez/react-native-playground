@@ -7,6 +7,7 @@ import Movies from './components/networking'
 import PinchZoom from './components/pinchZoom'
 import ScrollViewDemo from './components/scrollview'
 import BasicComponents from './components/basicComponents'
+import PanResponderDemo from './components/panResponder'
 
 class Blink extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export default class App extends React.Component {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
 
-    return <BasicComponents />
+    return <PanResponderDemo />
   }
 }
 
